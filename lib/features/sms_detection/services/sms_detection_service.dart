@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../models/scam_rule.dart';
 import '../models/sms_scan_result.dart';
 import 'ml_detection_service.dart';
+import 'notification_service.dart';
 import 'scam_rules_service.dart';
 import 'sms_permission_service.dart';
 import 'sms_reader_service.dart';
@@ -16,6 +17,7 @@ class SmsDetectionService extends ChangeNotifier {
   final SmsReaderService _readerService = SmsReaderService();
   final ScamRulesService _rulesService = ScamRulesService();
   final MlDetectionService _mlDetectionService = MlDetectionService();
+  final NotificationService _notificationService = NotificationService();
 
   List<SmsScanResult> _scannedMessages = [];
   bool _isScanning = false;
@@ -99,7 +101,7 @@ class SmsDetectionService extends ChangeNotifier {
     }
   }
 
-  void startRealTimeDetection() async{
+  void startRealTimeDetection() async {
     if (!_isListening) {
       _readerService.startListening((SmsScanResult message) async {
         final analyzedMessage = await _analyzeMessage(message);
@@ -125,9 +127,15 @@ class SmsDetectionService extends ChangeNotifier {
   }
 
   void _onScamDetected(SmsScanResult scamMessage) {
-    // This method can be extended to show notifications, alerts, etc.
+    // Show background notification
+    _notificationService.showFraudAlert(scamMessage);
+
+    // Wake up app if it's in background
+    _notificationService.wakeUpApp();
+
     print('SCAM DETECTED: ${scamMessage.message}');
     print('Matched Rule: ${scamMessage.matchedRule}');
+    print('Fraud notification sent!');
   }
 
   List<SmsScanResult> getScamMessages() {

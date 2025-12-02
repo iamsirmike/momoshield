@@ -26,6 +26,23 @@ class _MoMoShieldAppState extends State<MoMoShieldApp>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _smsController = SmsDetectionController();
+    _handleAppLaunch();
+  }
+
+  void _handleAppLaunch() {
+    // Check if app was launched from fraud notification
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // Handle deep link or notification launch here
+      _checkForFraudAlert();
+    });
+  }
+
+  void _checkForFraudAlert() {
+    // This would be implemented to handle notification launches
+    // For now, just ensure protection is active
+    if (_smsController.hasPermissions && !_smsController.isListening) {
+      _smsController.startRealTimeDetection();
+    }
   }
 
   @override
