@@ -1,0 +1,64 @@
+{
+  "scam_patterns": [
+    {
+      "id": "momo_pin_request",
+      "pattern": "send your momo pin",
+      "description": "Request for MoMo PIN"
+    },
+    {
+      "id": "momo_blocked",
+      "pattern": "your momo has been blocked",
+      "description": "Fake account blocking notification"
+    },
+    {
+      "id": "urgent_money",
+      "pattern": "urgent money needed",
+      "description": "Urgent money request scam"
+    },
+    {
+      "id": "cash_out",
+      "pattern": "cash-out",
+      "description": "Fake cash-out notification"
+    },
+    {
+      "id": "reset_account",
+      "pattern": "reset your account",
+      "description": "Account reset scam"
+    },
+    {
+      "id": "unlock_bonus",
+      "pattern": "unlock bonus",
+      "description": "Fake bonus unlock"
+    },
+    {
+      "id": "you_won",
+      "pattern": "you won",
+      "description": "Fake winning notification"
+    },
+    {
+      "id": "reward",
+      "pattern": "reward",
+      "description": "Fake reward notification"
+    },
+    {
+      "id": "verify_pin",
+      "pattern": "verify your pin",
+      "description": "PIN verification scam"
+    },
+    {
+      "id": "confirm_transaction",
+      "pattern": "confirm transaction",
+      "description": "Fake transaction confirmation"
+    },
+    {
+      "id": "account_suspended",
+      "pattern": "account suspended",
+      "description": "Fake account suspension"
+    },
+    {
+      "id": "click_link",
+      "pattern": "click this link",
+      "description": "Malicious link scam"
+    }
+  ]
+}
