@@ -1,16 +1,10 @@
 # momoshield
 
-A new Flutter project.
+This is a mobile money fraud protection app with these core MVP features:
 
-## Getting Started
+SMS Scam Detection - On-device privacy-first scanning for fake MoMo prompts, PIN requests, malicious links, and urgent payment scams
+Phone Number Reputation Score - Risk assessment of incoming calls/SMS using crowd-sourced reports (WIP)
+Fraud Alert Dashboard - Shows trends, high-risk numbers, and community alerts (WIP)
+Quick Report Button - Allows users to report scam attempts across SMS, calls, WhatsApp, and Telegram (WIP)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The focus is on real-time protection, privacy (on-device processing), and community-driven threat intelligence. This is a solid MVP concept for combating mobile money fraud.
